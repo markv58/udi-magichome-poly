@@ -198,7 +198,7 @@ class MagicHomeLED(polyinterface.Node):
             LOGGER.info('Received command to turn on %s (value = %s).', self.address, str(_value))
             
             if QUERY_BEFORE_CMD: self.update_info()
-            
+            self.device.turnOn()
             if _value is not None:
                 _value = int(_value)
                 _str_mode = self.device.mode
@@ -296,6 +296,7 @@ class MagicHomeLED(polyinterface.Node):
         try:
             LOGGER.info('Received manual change command for %s, %s', self.address, str(command))
             if QUERY_BEFORE_CMD: self.update_info()
+            self.device.turnOn()
             _cmd = command.get('cmd')
             _val = int(command.get('value'))
             _red = _val if _cmd == 'SETR' else self.red
@@ -321,6 +322,7 @@ class MagicHomeLED(polyinterface.Node):
     def setRGB(self, command):
         try:
             if QUERY_BEFORE_CMD: self.update_info()
+            self.device.turnOn()
             _query = command.get('query')
             _red = int(_query.get('R.uom56'))
             _green = int(_query.get('G.uom56'))
@@ -340,6 +342,7 @@ class MagicHomeLED(polyinterface.Node):
     def setColor(self, command):
         try:
             if QUERY_BEFORE_CMD: self.update_info()
+            self.device.turnOn()
             _color = int(command.get('value'))
             LOGGER.info('Received setColor command, changing %s color to %s', self.address, COLORS[_color][0])
             _pct_brightness = self.brightness / 100. if self.brightness > 0 else 1 #get brightness as 0-1, default to 100% if the brightness is 0 (light off)
@@ -445,6 +448,7 @@ class MagicHomeLED(polyinterface.Node):
     
     def setTemperature(self, command):
         if QUERY_BEFORE_CMD: self.update_info()
+        self.device.turnOn()
         _temp = int(command.get('value'))
         #Check that temperature is proper and in correct range (2700K-6500K)
         if _temp is None:
@@ -473,6 +477,7 @@ class MagicHomeLED(polyinterface.Node):
     def setRGBW(self, command):
         try:
             if QUERY_BEFORE_CMD: self.update_info()
+            self.device.turnOn()
             _cmd = command.get('value')
             _query = command.get('query')
             _red = int(_query.get('R.uom56'))
@@ -503,7 +508,7 @@ class MagicHomeLED(polyinterface.Node):
             _value = command.get('value')
             
             if QUERY_BEFORE_CMD: self.update_info()
-            
+            self.device.turnOn()
             if _value is not None:
                 _value = int(_value)
                 if _value == 0:
@@ -525,7 +530,7 @@ class MagicHomeLED(polyinterface.Node):
             _value = command.get('value')
             
             if QUERY_BEFORE_CMD: self.update_info()
-            
+            self.device.turnOn()
             if _value is not None:
                 _value = int(_value)
                 if _value == 0:
