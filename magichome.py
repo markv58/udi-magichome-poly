@@ -82,6 +82,7 @@ class Controller(polyinterface.Controller):
     def query(self, command=None):
         for node in self.nodes:
             self.nodes[node].update_info()
+            self.nodes[node].reportDrivers()	
 
     def update_info(self):
         pass #Nothing to update for controller
