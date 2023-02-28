@@ -82,7 +82,7 @@ class Controller(polyinterface.Controller):
     def query(self, command=None):
         for node in self.nodes:
             self.nodes[node].update_info()
-            self.nodes[node].reportDrivers()	
+            #self.nodes[node].reportDrivers()	
 
     def update_info(self):
         pass #Nothing to update for controller
@@ -164,6 +164,10 @@ class Controller(polyinterface.Controller):
         except Exception as ex:
             LOGGER.error('Error adding Bulb: %s', str(ex))
             return False
+        for node in self.nodes:
+            self.nodes[node].update_info()
+            self.nodes[node].reportDrivers()		
+
         return True
         
 
