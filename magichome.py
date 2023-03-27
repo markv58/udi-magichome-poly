@@ -169,10 +169,14 @@ class Controller(polyinterface.Controller):
             self.nodes[node].reportDrivers()		
 
         return True
-        
+
+    def update_profile(self,command):
+        LOGGER.info('update_profile:')
+        st = self.poly.installprofile()
+        return st        
 
     id = 'controller'
-    commands = {'DISCOVER': discover}
+    commands = {'DISCOVER': discover, 'UpdateProfile': update_profile}
     drivers = [{'driver': 'ST', 'value': 0, 'uom': 2} #Built-in for polyglot v2, do not delete
               ]
 
