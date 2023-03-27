@@ -69,6 +69,8 @@ class Controller(polyinterface.Controller):
 
     def start(self):
         LOGGER.info('Starting MagicHome LED Polyglot v2 NodeServer version {}'.format(VERSION))
+        st = self.poly.installprofile()
+        return st
         self.discover()
 
     def longPoll(self):
