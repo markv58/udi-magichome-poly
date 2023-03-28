@@ -179,7 +179,7 @@ class Controller(polyinterface.Controller):
 
     id = 'controller'
     commands = {'DISCOVER': discover, 'UpdateProfile': update_profile}
-    drivers = [{'driver': 'ST', 'value': 0, 'uom': 2} #Built-in for polyglot v2, do not delete
+    drivers = [{'driver': 'ST', 'value': 1, 'uom': 2} #Built-in for polyglot v2, do not delete
               ]
 
 
