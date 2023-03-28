@@ -1,7 +1,9 @@
 # MagicHome-polyglot
 This is the MagicHome Node Server for the ISY Polyglot interface.  
 (c) fahrer16 aka Brian Feeney.  
-MIT license. 
+MIT license.
+
+This has been customized for my personal use to do what I want it to do and perform properly on my system.
 
 This was built on Debian 9 running on ESXi for ISY version 5.0.10 and polyglot v2 (https://github.com/Einstein42/udi-poly-template-python)
 The original version for polyglot v1 is here: https://github.com/fahrer16/magichome-nodeserver
