@@ -85,8 +85,8 @@ class Controller(polyinterface.Controller):
             #self.nodes[node].reportDrivers()	
 
     def update_info(self):
-        self.poly.installprofile()
-        #pass #Nothing to update for controller
+        #self.poly.installprofile()
+        pass #Nothing to update for controller
 
     def discover(self, *args, **kwargs):
         _success = False
