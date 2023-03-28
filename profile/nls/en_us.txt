@@ -3,6 +3,7 @@ ND-controller-NAME = MagicHome Bridge
 ND-controller-ICON = GenericCtl
 ST-ctl-ST-NAME = NodeServer Online
 CMD-ctl-DISCOVER-NAME = Re-Discover LEDs
+CMD-ctl-UpdateProfile-NAME = Update Profile
 
 # Color and WW Bulbs
 ND-magichomeled-NAME = MagicHome RGB LED
