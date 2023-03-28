@@ -143,7 +143,7 @@ class Controller(polyinterface.Controller):
             LOGGER.error('Error obtaining query_before_cmd flag from Polyglot configuration: %s',str(ex))
 
         self.firstRun = False
-	self.update_profile(self)
+        self.update_profile(self)
         return _success
 
     def _addNode(self, d):
