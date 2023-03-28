@@ -340,6 +340,7 @@ class MagicHomeLED(polyinterface.Node):
             if (_red + _green + _blue) <= 0: return self.setOff()
             LOGGER.info('Received RGB Command, updating %s to: R:%i G:%i, B:%i', self.address, _red, _green, _blue)
             self.device.setRgb(_red, _green, _blue)
+            self.device.setRgbw(w=0,w2=0)
             #self.device.turnOn()
             
             timer = threading.Timer(UPDATE_DELAY, self.update_info)
