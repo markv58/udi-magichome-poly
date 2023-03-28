@@ -359,6 +359,7 @@ class MagicHomeLED(polyinterface.Node):
             _red = int(COLORS[_color][1][0] * _pct_brightness)
             _green = int(COLORS[_color][1][1] * _pct_brightness)
             _blue = int(COLORS[_color][1][2] * _pct_brightness)
+            self.device.setRgbw(w=0,w2=0)
             self.device.setRgb(_red, _green, _blue)
             
             timer = threading.Timer(UPDATE_DELAY, self.update_info)
