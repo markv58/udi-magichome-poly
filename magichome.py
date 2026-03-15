@@ -3,9 +3,16 @@
 This is a NodeServer for controlling magichome/flux-led style LED lights by fahrer16 (Brian Feeney)
 Based on template for Polyglot v2 written in Python2/3 by Einstein.42 (James Milne) milne.james@gmail.com
 """
-
-import polyinterface
-"""#NEED TO RENAME __main__ to flux_led"""
+try:
+    import polyinterface
+except ImportError:
+    import pgc_interface as polyinterface
+import sys
+import time
+import subprocess
+import http.client
+import urllib
+import requests
 from flux_led import BulbScanner, WifiLedBulb
 import sys
 import os
