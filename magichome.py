@@ -7,12 +7,7 @@ try:
     import polyinterface
 except ImportError:
     import pgc_interface as polyinterface
-import sys
-import time
-import subprocess
-import http.client
-import urllib
-import requests
+
 from flux_led import BulbScanner, WifiLedBulb
 import sys
 import os
