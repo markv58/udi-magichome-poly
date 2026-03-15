@@ -1,2 +1,2 @@
-polyinterface>=2.0.0
+polyinterface>=2.0.29
 git+https://github.com/markv58/flux_led
